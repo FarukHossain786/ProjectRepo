@@ -10,7 +10,7 @@ class TweetController extends Controller
     public function index()
     {
         $tweets = Tweet::latest()->get();
-        return view('home',[
+        return view('tweets.index',[
             'tweets'=>$tweets
         ]);
 
@@ -22,7 +22,7 @@ class TweetController extends Controller
             'user_id' =>auth()->id(),
             'body'    =>request('body')
         ]);
-        return redirect('/home');
+        return redirect('/tweets');
 
     }
     
